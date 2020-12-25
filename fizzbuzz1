@@ -1,0 +1,26 @@
+def fizz_buzz(number):
+    if (number % 3 == 0) and (number % 5 == 0):
+        return "FizzBuzz"
+    if number % 3 == 0:
+        return "Fizz"
+    if number % 5 == 0:
+        return "Buzz"
+    return number
+
+
+while True:
+    number = input('Enter a number, or type help for instructions: ').lower()
+    if number.isnumeric():
+        number = int(number)
+        print(fizz_buzz(number))
+    elif not number.isnumeric():
+        if number == 'help':
+            print('''
+Type q to quit
+Type a multiple of 3 for Fizz
+Type a multiple of 5 for Buzz
+Type a multiple of 15 for FizzBuzz
+''')
+        if number == 'quit' or number == 'q':
+            print('Exited successfully.')
+            break
